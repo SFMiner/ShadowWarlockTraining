@@ -1,0 +1,102 @@
+{
+	"level_number": 1,
+	"name": "Shadow Slide Trial",
+	"type": "training",
+	"duration_estimate_minutes": 10,
+	"difficulty_stars": 1,
+	"learning_objectives": [
+		"Introduce translation (Shadow Slide)",
+		"Teach clicking and dragging",
+		"Demonstrate barriers block Shadow Slide"
+	],
+	"arena": {
+		"width_tiles": 40,
+		"height_tiles": 25
+	},
+	"player_start": {
+		"position": [5, 12],
+		"direction": [1, 0]
+	},
+	"objectives": {
+		"primary": "Reach the exit",
+		"secondary": [
+			"Practice Shadow Slide movement",
+			"Learn barrier mechanics"
+		]
+	},
+	"enemies": [],
+	"hazards": [
+		{
+			"type": "spike_trap",
+			"position": [15, 12]
+		},
+		{
+			"type": "spike_trap",
+			"position": [20, 12]
+		},
+		{
+			"type": "spike_trap",
+			"position": [25, 12]
+		}
+	],
+	"barriers": [
+		{
+			"type": "wall",
+			"start": [10, 10],
+			"end": [10, 14]
+		},
+		{
+			"type": "wall",
+			"start": [30, 10],
+			"end": [30, 14]
+		}
+	],
+	"exit": {
+		"position": [35, 12]
+	},
+	"tutorial_sequence": [
+		{
+			"step": 1,
+			"text": "Welcome, apprentice. You seek to master the Shadow Arts—transformations that reshape reality itself.",
+			"wait_for_input": true
+		},
+		{
+			"step": 2,
+			"text": "The first art is Shadow Slide: moving without rotation. In mathematics, this is called translation.",
+			"wait_for_input": true
+		},
+		{
+			"step": 3,
+			"text": "Click on yourself, then drag to a new position to perform Shadow Slide.",
+			"wait_for_input": false,
+			"required_action": "shadow_slide",
+			"mastery_count": 1
+		},
+		{
+			"step": 4,
+			"text": "Excellent. Now practice sliding in different directions.",
+			"wait_for_input": false,
+			"required_action": "shadow_slide",
+			"mastery_count": 3
+		},
+		{
+			"step": 5,
+			"text": "Beware: Shadow Slide cannot pass through barriers. Try it.",
+			"wait_for_input": false,
+			"required_action": "shadow_slide_blocked",
+			"mastery_count": 1
+		},
+		{
+			"step": 6,
+			"text": "But hazards can be crossed safely with Shadow Slide. Notice the red spikes—you can pass through them.",
+			"wait_for_input": true
+		},
+		{
+			"step": 7,
+			"text": "Now reach the exit on the right side of the arena. Remember: barriers block, hazards do not.",
+			"wait_for_input": false
+		}
+	],
+	"xp_reward": 100,
+	"unlocks_level": 2
+}

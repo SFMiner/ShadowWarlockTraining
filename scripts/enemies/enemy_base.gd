@@ -33,7 +33,7 @@ func _ready() -> void:
 	# Unlock bestiary entry when first encountered
 	GameManager.unlock_bestiary_entry(enemy_type)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not is_active or patrol_waypoints.is_empty():
 		return
 	
@@ -88,13 +88,13 @@ func calculate_next_action() -> Dictionary:
 	telegraph_data = action
 	return action
 
-func execute_action(action: Dictionary) -> void:
+func execute_action(_action: Dictionary) -> void:
 	"""Virtual method: Execute the planned action.
 
 	Override in subclasses to implement specific movement/attack logic.
 
 	Args:
-		action: Dictionary with action data to execute
+		_action: Dictionary with action data to execute
 	"""
 	change_state(State.EXECUTING)
 	await get_tree().create_timer(0.3).timeout

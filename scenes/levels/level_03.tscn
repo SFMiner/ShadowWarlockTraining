@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1h2mdt408bnc"]
+
+[ext_resource type="Script" uid="uid://b3xm47prlh6ci" path="res://scripts/levels/level_base.gd" id="1_m802k"]
+
+[node name="Level03" type="Node2D"]
+script = ExtResource("1_m802k")
+level_number = 3
+auto_start = true

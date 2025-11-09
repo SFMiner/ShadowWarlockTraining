@@ -206,4 +206,4 @@ static func pixel_to_tile(pixel_pos: Vector2) -> Vector2i:
 	Returns:
 		Position in tiles (grid coordinates)
 	"""
-	return (pixel_pos / TILE_SIZE).round()
+	return (pixel_pos / TILE_SIZE).floor()

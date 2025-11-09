@@ -79,14 +79,14 @@ func set_difficulty(difficulty: Difficulty) -> void:
 
 	print("Difficulty set to: %s" % difficulty_name.to_upper())
 
-func set_difficulty_by_name(name: String) -> void:
+func set_difficulty_by_name(difficulty_str: String) -> void:
 	"""
 	Set difficulty by string name.
 
 	Args:
-		name: "easy", "normal", or "hard"
+		difficulty_str: "easy", "normal", or "hard"
 	"""
-	match name.to_lower():
+	match difficulty_str.to_lower():
 		"easy":
 			set_difficulty(Difficulty.EASY)
 		"normal":
@@ -94,7 +94,7 @@ func set_difficulty_by_name(name: String) -> void:
 		"hard":
 			set_difficulty(Difficulty.HARD)
 		_:
-			print("Unknown difficulty: %s. Using normal" % name)
+			print("Unknown difficulty: %s. Using normal" % difficulty_str)
 			set_difficulty(Difficulty.NORMAL)
 
 func _apply_settings(settings: Dictionary) -> void:

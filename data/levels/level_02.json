@@ -1,0 +1,115 @@
+{
+	"level_number": 2,
+	"name": "Mirrorwalk Trial",
+	"type": "training",
+	"duration_estimate_minutes": 15,
+	"difficulty_stars": 2,
+	"learning_objectives": [
+		"Teach reflection mechanics",
+		"Introduce mirror placement concept",
+		"Demonstrate Mirrorwalk passes through barriers",
+		"Teach coordinate reflection mathematics"
+	],
+	"arena": {
+		"width_tiles": 40,
+		"height_tiles": 25
+	},
+	"player_start": {
+		"position": [5, 12],
+		"direction": [1, 0]
+	},
+	"objectives": {
+		"primary": "Reach the exit using Mirrorwalk",
+		"secondary": [
+			"Place mirror on barrier 3 times",
+			"Reflect to marked positions 3 times"
+		]
+	},
+	"enemies": [],
+	"hazards": [
+		{
+			"type": "spike_trap",
+			"position": [12, 6]
+		},
+		{
+			"type": "spike_trap",
+			"position": [12, 18]
+		},
+		{
+			"type": "spike_trap",
+			"position": [28, 6]
+		},
+		{
+			"type": "spike_trap",
+			"position": [28, 18]
+		}
+	],
+	"barriers": [
+		{
+			"type": "wall",
+			"start": [10, 8],
+			"end": [10, 16]
+		},
+		{
+			"type": "wall",
+			"start": [15, 5],
+			"end": [15, 19]
+		},
+		{
+			"type": "wall",
+			"start": [25, 8],
+			"end": [25, 16]
+		},
+		{
+			"type": "wall",
+			"start": [30, 5],
+			"end": [30, 19]
+		}
+	],
+	"exit": {
+		"position": [37, 12]
+	},
+	"tutorial_sequence": [
+		{
+			"step": 1,
+			"text": "Well done. Now we explore Mirrorwalk: reflection across a line. Unlike Shadow Slide, Mirrorwalk passes through barriers.",
+			"wait_for_input": true
+		},
+		{
+			"step": 2,
+			"text": "To use Mirrorwalk, you must place a mirror—a line to reflect across. Click yourself, then click a barrier to create a mirror.",
+			"wait_for_input": true
+		},
+		{
+			"step": 3,
+			"text": "Once the mirror is placed, drag to choose a direction. You will reflect across the mirror to your destination.",
+			"wait_for_input": false,
+			"required_action": "mirrorwalk",
+			"mastery_count": 1
+		},
+		{
+			"step": 4,
+			"text": "Practice placing mirrors on different barriers and reflecting.",
+			"wait_for_input": false,
+			"required_action": "mirrorwalk",
+			"mastery_count": 3
+		},
+		{
+			"step": 5,
+			"text": "Notice you can reach positions that Shadow Slide cannot. Barriers do not stop reflections.",
+			"wait_for_input": true
+		},
+		{
+			"step": 6,
+			"text": "Your mastery of translation and reflection unlocks the ability to scale: Shadowshift (self). You can now modify your own size.",
+			"wait_for_input": true
+		},
+		{
+			"step": 7,
+			"text": "Navigate to the exit. Use what you have learned.",
+			"wait_for_input": false
+		}
+	],
+	"xp_reward": 150,
+	"unlocks_level": 3
+}

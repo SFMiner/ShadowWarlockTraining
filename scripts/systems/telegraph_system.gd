@@ -203,7 +203,7 @@ func _create_sentinel_indicator(indicator: Node2D, target_pos: Vector2) -> void:
 
 	indicator.add_child(line)
 
-func _create_architect_indicator(indicator: Node2D, action_type: String) -> void:
+func _create_architect_indicator(indicator: Node2D, _action_type: String) -> void:
 	"""Create Architect telegraph (multi-part attack indicator)."""
 	# Purple glow for multi-target threat
 	var circle = CircleShape2D.new()

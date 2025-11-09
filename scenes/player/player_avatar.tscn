@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vybkqtn4fh4v"]
 
-[ext_resource type="Script" path="res://scripts/player/player_avatar.gd" id="1_37we1"]
+[ext_resource type="Script" uid="uid://dhomfmkp8r6bg" path="res://scripts/player/player_avatar.gd" id="1_37we1"]
 [ext_resource type="Texture2D" uid="uid://cqarqnhk8lgq8" path="res://assets/sprites/characters/warlock_walk_Sheet.png" id="2_mej13"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_37we1"]
@@ -47,6 +47,7 @@ _data = {
 script = ExtResource("1_37we1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.99999994)
 texture = ExtResource("2_mej13")
 hframes = 5
 frame = 2

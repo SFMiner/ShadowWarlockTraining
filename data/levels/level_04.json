@@ -1,0 +1,127 @@
+{
+	"level_number": 4,
+	"name": "Shadowshift Trial",
+	"type": "training",
+	"duration_estimate_minutes": 25,
+	"difficulty_stars": 4,
+	"learning_objectives": [
+		"Teach dilation/scaling (Shadowshift)",
+		"Introduce pressure plates that respond to size",
+		"Demonstrate size-dependent puzzle mechanics",
+		"Challenge player to combine all Shadow Arts"
+	],
+	"arena": {
+		"width_tiles": 40,
+		"height_tiles": 25
+	},
+	"player_start": {
+		"position": [5, 12],
+		"direction": [1, 0]
+	},
+	"objectives": {
+		"primary": "Reach the exit using all four Shadow Arts",
+		"secondary": [
+			"Activate pressure plates with correct sizes",
+			"Combine transformations strategically"
+		]
+	},
+	"enemies": [],
+	"hazards": [
+		{
+			"type": "spike_trap",
+			"position": [12, 6]
+		},
+		{
+			"type": "spike_trap",
+			"position": [12, 18]
+		},
+		{
+			"type": "spike_trap",
+			"position": [25, 6]
+		},
+		{
+			"type": "spike_trap",
+			"position": [25, 18]
+		}
+	],
+	"barriers": [
+		{
+			"type": "wall",
+			"start": [10, 8],
+			"end": [10, 16]
+		},
+		{
+			"type": "wall",
+			"start": [15, 5],
+			"end": [15, 19]
+		},
+		{
+			"type": "wall",
+			"start": [20, 8],
+			"end": [20, 16]
+		},
+		{
+			"type": "wall",
+			"start": [30, 5],
+			"end": [30, 19]
+		}
+	],
+	"pressure_plates": [
+		{
+			"position": [15, 12],
+			"required_size": "small",
+			"plate_id": "plate_1"
+		},
+		{
+			"position": [25, 12],
+			"required_size": "large",
+			"plate_id": "plate_2"
+		}
+	],
+	"exit": {
+		"position": [37, 12]
+	},
+	"tutorial_sequence": [
+		{
+			"step": 1,
+			"text": "Excellent progress. You have learned translation, reflection, and rotation. Now: the final art—Shadowshift.",
+			"wait_for_input": true
+		},
+		{
+			"step": 2,
+			"text": "Shadowshift is dilation: scaling yourself up or down. Click yourself and drag up to grow, down to shrink.",
+			"wait_for_input": true
+		},
+		{
+			"step": 3,
+			"text": "Let us practice. Grow yourself larger.",
+			"wait_for_input": false,
+			"required_action": "shadowshift_grow",
+			"mastery_count": 1
+		},
+		{
+			"step": 4,
+			"text": "Now shrink yourself smaller.",
+			"wait_for_input": false,
+			"required_action": "shadowshift_shrink",
+			"mastery_count": 1
+		},
+		{
+			"step": 5,
+			"text": "Size matters in the world. Some passages accept only small avatars. Others require large ones.",
+			"wait_for_input": true
+		},
+		{
+			"step": 6,
+			"text": "Pressure plates ahead respond to your size. Step on them when you match their requirement.",
+			"wait_for_input": true
+		},
+		{
+			"step": 7,
+			"text": "You have mastered all four Shadow Arts: translation, reflection, rotation, and dilation. Now combine them to escape.",
+			"wait_for_input": false
+		}
+	],
+	"xp_reward": 250,
+	"unlocks_level": 5
+}

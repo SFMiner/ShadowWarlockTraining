@@ -182,12 +182,12 @@ func check_enemy_enemy_collision(enemy: Node2D, others: Array[Node2D]) -> bool:
 
 	return false
 
-func check_hazard_collision(entity: Node2D) -> bool:
+func check_hazard_collision(_entity: Node2D) -> bool:
 	"""
 	Check if entity is on a hazard tile.
 
 	Args:
-		entity: Entity to check
+		_entity: Entity to check
 
 	Returns:
 		true if on hazard
@@ -196,12 +196,12 @@ func check_hazard_collision(entity: Node2D) -> bool:
 	# For now, return false (no hazards)
 	return false
 
-func check_hazard_collision_at(world_pos: Vector2) -> bool:
+func check_hazard_collision_at(_world_pos: Vector2) -> bool:
 	"""
 	Check if a world position contains a hazard.
 
 	Args:
-		world_pos: World position to check
+		_world_pos: World position to check
 
 	Returns:
 		true if hazard at position

@@ -265,6 +265,7 @@ func end_resolution_phase() -> void:
 
 	# Continue to next turn
 	_transition_to_phase(Phase.IDLE)
+	turn_completed.emit(turn_number)
 	await get_tree().create_timer(0.5).timeout
 	start_turn()
 

@@ -221,12 +221,18 @@ func load_game() -> void:
 		multi_target = save_data["multi_target"]
 
 	if save_data.has("progress"):
-		levels_complete = save_data["progress"].get("levels_complete", [])
+		var loaded_levels = save_data["progress"].get("levels_complete", [])
+		levels_complete.clear()
+		for level in loaded_levels:
+			levels_complete.append(int(level))
 		current_level = save_data["progress"].get("current_level", 1)
 		resets_used = save_data["progress"].get("resets_used", 0)
 
 	if save_data.has("bestiary"):
-		bestiary_unlocked = save_data["bestiary"]
+		var loaded_bestiary = save_data["bestiary"]
+		bestiary_unlocked.clear()
+		for entry in loaded_bestiary:
+			bestiary_unlocked.append(str(entry))
 
 	if save_data.has("settings"):
 		var settings = save_data["settings"]

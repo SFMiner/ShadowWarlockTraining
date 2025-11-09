@@ -1,0 +1,120 @@
+{
+	"level_number": 3,
+	"name": "Pivot & Shadow Pivot Trial",
+	"type": "training",
+	"duration_estimate_minutes": 20,
+	"difficulty_stars": 3,
+	"learning_objectives": [
+		"Teach self-rotation (Pivot)",
+		"Introduce external rotation (Shadow Pivot)",
+		"Teach directional gate mechanics",
+		"Demonstrate rotation-based puzzle solving"
+	],
+	"arena": {
+		"width_tiles": 40,
+		"height_tiles": 25
+	},
+	"player_start": {
+		"position": [5, 12],
+		"direction": [1, 0]
+	},
+	"objectives": {
+		"primary": "Navigate directional gates to reach exit",
+		"secondary": [
+			"Pass through 3 directional gates",
+			"Learn rotation mechanics"
+		]
+	},
+	"enemies": [],
+	"hazards": [
+		{
+			"type": "spike_trap",
+			"position": [15, 8]
+		},
+		{
+			"type": "spike_trap",
+			"position": [15, 16]
+		},
+		{
+			"type": "spike_trap",
+			"position": [28, 6]
+		},
+		{
+			"type": "spike_trap",
+			"position": [28, 18]
+		}
+	],
+	"barriers": [
+		{
+			"type": "wall",
+			"start": [10, 5],
+			"end": [10, 19]
+		},
+		{
+			"type": "wall",
+			"start": [20, 5],
+			"end": [20, 19]
+		},
+		{
+			"type": "wall",
+			"start": [30, 5],
+			"end": [30, 19]
+		}
+	],
+	"directional_gates": [
+		{
+			"position": [15, 12],
+			"required_direction": [1, 0],
+			"gate_id": "gate_1"
+		},
+		{
+			"position": [25, 12],
+			"required_direction": [1, 1],
+			"gate_id": "gate_2"
+		},
+		{
+			"position": [35, 12],
+			"required_direction": [0, -1],
+			"gate_id": "gate_3"
+		}
+	],
+	"exit": {
+		"position": [37, 12]
+	},
+	"tutorial_sequence": [
+		{
+			"step": 1,
+			"text": "You now master translation and reflection. Next: rotation. There are two forms of rotation.",
+			"wait_for_input": true
+		},
+		{
+			"step": 2,
+			"text": "Pivot: self-rotation. You remain in place but change direction. This is useful for positioning.",
+			"wait_for_input": true
+		},
+		{
+			"step": 3,
+			"text": "Click on yourself and rotate to face a new direction. You can choose 8 directions (45-degree increments).",
+			"wait_for_input": false,
+			"required_action": "pivot",
+			"mastery_count": 2
+		},
+		{
+			"step": 4,
+			"text": "Shadow Pivot: rotation around an external point. Click yourself, then an object, to rotate around it.",
+			"wait_for_input": true
+		},
+		{
+			"step": 5,
+			"text": "Both forms of rotation change your facing direction. This matters: directional gates require you to face the right way.",
+			"wait_for_input": true
+		},
+		{
+			"step": 6,
+			"text": "You see gates ahead with arrows. Pass through each gate facing the correct direction. Begin!",
+			"wait_for_input": false
+		}
+	],
+	"xp_reward": 200,
+	"unlocks_level": 4
+}
