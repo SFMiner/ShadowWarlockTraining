@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8m2fhs37oxp3"]
+
+[ext_resource type="Script" path="res://scripts/test/transformation_test.gd"]
+
+[node name="TransformationTestScene" type="Node2D"]
+script = ExtResource("res://scripts/test/transformation_test.gd")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_test")
+format = 2
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="TestUI" type="CanvasLayer" parent="."]
+
+[node name="UIControl" type="Control" parent="TestUI"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+
+[node name="TestButtonsPanel" type="VBoxContainer" parent="TestUI/UIControl"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 250.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="TestUI/UIControl/TestButtonsPanel"]
+custom_minimum_size = Vector2(0, 30)
+text = "Transformation Tests"
+horizontal_alignment = 1
+
+[node name="TestButton1" type="Button" parent="TestUI/UIControl/TestButtonsPanel"]
+text = "Shadow Slide (1)"
+
+[node name="TestButton2" type="Button" parent="TestUI/UIControl/TestButtonsPanel"]
+text = "Mirrorwalk (2)"
+
+[node name="TestButton3" type="Button" parent="TestUI/UIControl/TestButtonsPanel"]
+text = "Pivot (3)"
+
+[node name="TestButton4" type="Button" parent="TestUI/UIControl/TestButtonsPanel"]
+text = "Shadow Pivot (4)"
+
+[node name="TestButton5" type="Button" parent="TestUI/UIControl/TestButtonsPanel"]
+text = "Shadowshift (5)"
+
+[node name="RunAllButton" type="Button" parent="TestUI/UIControl/TestButtonsPanel"]
+custom_minimum_size = Vector2(0, 40)
+text = "Run All Tests (R)"
+
+[node name="InfoLabel" type="Label" parent="TestUI/UIControl/TestButtonsPanel"]
+text = "Press keys 1-5 or click buttons
+Press R to run all tests
+
+Current Level: %s
+Available Abilities: %s" % [GameManager.player_level, "Check console"]
+autowrap_enabled = true

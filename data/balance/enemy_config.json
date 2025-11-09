@@ -1,0 +1,116 @@
+{
+	"hound": {
+		"name": "Hound of the Pale",
+		"sprite_color": "#FFEB3B",
+		"health": 1,
+		"pounce_damage": 1,
+		"movement_speed": 2.0,
+		"animation_duration_seconds": 0.3,
+		"ai": {
+			"patrol_points": [
+				[10, 10],
+				[30, 10],
+				[30, 20],
+				[10, 20]
+			],
+			"chase_range_tiles": 4,
+			"pounce_range_tiles": 1
+		},
+		"bestiary_entry": "A spectral hound that patrols its territory. Becomes aggressive when it detects prey."
+	},
+	"mirror_wraith": {
+		"name": "Mirror Wraith",
+		"sprite_color": "#00BCD4",
+		"sprite_alpha": 0.75,
+		"health": 1,
+		"attack_damage": 1,
+		"movement_speed": 1.5,
+		"animation_duration_seconds": 0.4,
+		"ai": {
+			"mimic_range_tiles": 6,
+			"phase_range_tiles": 3,
+			"detect_range_tiles": 8
+		},
+		"abilities": {
+			"mimic": {
+				"description": "Copies the player's last transformation",
+				"cost": 0
+			},
+			"phase": {
+				"description": "Teleports through barriers",
+				"range_tiles": 3,
+				"cost": 0
+			}
+		},
+		"bestiary_entry": "A ghostly entity that mirrors your moves. It phases through solid matter as if it doesn't exist."
+	},
+	"hollow_sentinel": {
+		"name": "Hollow Sentinel",
+		"sprite_color": "#F44336",
+		"health": 1,
+		"beam_damage": 1,
+		"movement_speed": 0.0,
+		"animation_duration_seconds": 0.5,
+		"ai": {
+			"beam_range_tiles": 8,
+			"rotation_speed_degrees_per_turn": 90,
+			"detection_range_tiles": 10
+		},
+		"abilities": {
+			"beam": {
+				"description": "Fires a devastating beam in its facing direction",
+				"range_tiles": 8,
+				"width_tiles": 1,
+				"cost": 0,
+				"passes_through_enemies": true,
+				"stops_at_walls": true
+			},
+			"rotate": {
+				"description": "Rotates to face the player",
+				"max_rotation_per_turn": 90,
+				"cost": 0
+			}
+		},
+		"shield": {
+			"description": "The front of the sentinel has an energy shield",
+			"blocks_from_direction": "front",
+			"protection_angle_degrees": 90
+		},
+		"bestiary_entry": "A mechanical construct that fires beams of destructive energy. Its shield protects the front."
+	},
+	"architect": {
+		"name": "The Architect",
+		"sprite_color": "#9C27B0",
+		"health": 3,
+		"movement_speed": 1.0,
+		"animation_duration_seconds": 0.6,
+		"ai": {
+			"behavior": "boss",
+			"phase_transitions": [
+				{
+					"health_threshold": 66,
+					"new_behavior": "aggressive"
+				},
+				{
+					"health_threshold": 33,
+					"new_behavior": "desperate"
+				}
+			]
+		},
+		"abilities": {
+			"reality_warp": {
+				"description": "Transforms the battlefield",
+				"range_tiles": 10
+			},
+			"shadow_summon": {
+				"description": "Summons shadow duplicates",
+				"max_duplicates": 3
+			},
+			"master_transformation": {
+				"description": "Uses any of the four shadow arts",
+				"power_multiplier": 1.5
+			}
+		},
+		"bestiary_entry": "The master of shadow magic. This entity has transcended physical limitation."
+	}
+}

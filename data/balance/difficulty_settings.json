@@ -1,0 +1,35 @@
+{
+	"easy": {
+		"name": "Easy",
+		"description": "Perfect for learning. Enemies move one at a time, and their moves are shown longer.",
+		"enemy_telegraph": "sequential",
+		"telegraph_indicators_persist": true,
+		"telegraph_duration_seconds": 3.0,
+		"turn_timer_seconds": 0,
+		"show_ghost_previews": true,
+		"enemy_damage_multiplier": 1.0,
+		"player_damage_multiplier": 1.0
+	},
+	"normal": {
+		"name": "Normal",
+		"description": "Balanced challenge. Enemies move one at a time, but their moves fade quickly.",
+		"enemy_telegraph": "sequential",
+		"telegraph_indicators_persist": false,
+		"telegraph_duration_seconds": 1.5,
+		"turn_timer_seconds": 0,
+		"show_ghost_previews": false,
+		"enemy_damage_multiplier": 1.0,
+		"player_damage_multiplier": 1.0
+	},
+	"hard": {
+		"name": "Hard",
+		"description": "Intense challenge. All enemies move simultaneously with minimal telegraph.",
+		"enemy_telegraph": "simultaneous",
+		"telegraph_indicators_persist": false,
+		"telegraph_duration_seconds": 0.5,
+		"turn_timer_seconds": 20,
+		"show_ghost_previews": false,
+		"enemy_damage_multiplier": 1.0,
+		"player_damage_multiplier": 1.0
+	}
+}

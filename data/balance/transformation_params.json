@@ -1,0 +1,181 @@
+{
+	"shadow_slide": {
+		"name": "Shadow Slide",
+		"description": "Move without rotation (translation)",
+		"unlock_level": 1,
+		"power_cost": {
+			"self": "free",
+			"object": "1 level",
+			"enemy": "2 levels"
+		},
+		"range_scaling": {
+			"base_tiles": 1,
+			"per_level_tiles": 1
+		},
+		"mechanics": {
+			"barriers_block": true,
+			"hazards_block": false,
+			"enemies_block": true,
+			"animation_duration_seconds": 0.3
+		},
+		"visual_effects": {
+			"color": "#9C27B0",
+			"trail_type": "dotted_line",
+			"particle_type": "shadow_trails",
+			"glow_at_destination": true
+		}
+	},
+	"mirrorwalk": {
+		"name": "Mirrorwalk",
+		"description": "Reflect across a mirror line (reflection)",
+		"unlock_level": 1,
+		"power_cost": {
+			"self": "free",
+			"object": "1 level",
+			"enemy": "2 levels"
+		},
+		"range_scaling": {
+			"base_tiles": 1,
+			"per_level_tiles": 1
+		},
+		"mechanics": {
+			"barriers_block": false,
+			"hazards_block": false,
+			"enemies_block": false,
+			"animation_duration_seconds": 0.4,
+			"passes_through_barriers": true
+		},
+		"visual_effects": {
+			"color": "#00BCD4",
+			"mirror_line_color": "#00BCD4",
+			"particle_type": "mirror_shimmer",
+			"ripple_distortion": true
+		}
+	},
+	"pivot": {
+		"name": "Pivot",
+		"description": "Rotate in place (self-rotation)",
+		"unlock_level": 1,
+		"power_cost": {
+			"self": "free",
+			"object": "N/A",
+			"enemy": "N/A"
+		},
+		"rotation": {
+			"angles_allowed": [45, 90, 135, 180],
+			"angle_snap_enabled": true
+		},
+		"mechanics": {
+			"position_changes": false,
+			"animation_duration_seconds": 0.2
+		},
+		"visual_effects": {
+			"color": "#FFA726",
+			"particle_type": "spinning_amber",
+			"rotation_trail": true
+		}
+	},
+	"shadow_pivot": {
+		"name": "Shadow Pivot",
+		"description": "Rotate another entity around a point (external rotation)",
+		"unlock_level": 3,
+		"power_cost": {
+			"self": "free",
+			"object": "1 level",
+			"enemy": "2 levels"
+		},
+		"range_scaling": {
+			"base_tiles": 0,
+			"per_level_tiles": 1
+		},
+		"rotation": {
+			"angles_allowed": [45, 90, 135, 180],
+			"angle_snap_enabled": true
+		},
+		"mechanics": {
+			"position_changes": true,
+			"direction_changes": true,
+			"animation_duration_seconds": 0.4
+		},
+		"visual_effects": {
+			"color": "#FFA726",
+			"anchor_indicator": "amber_circle",
+			"tether_line": true,
+			"orbital_particles": true
+		}
+	},
+	"shadowshift": {
+		"name": "Shadowshift",
+		"description": "Scale/dilate an entity (dilation)",
+		"unlock_level": 2,
+		"power_cost": {
+			"self": "free",
+			"object": "1 level (level 4+)",
+			"enemy": "2 levels (level 6+)"
+		},
+		"scaling": {
+			"unlocked_at_odd_levels": true,
+			"min_scale_formula": "1 / (level / 2 + 1)",
+			"max_scale_formula": "level / 2 + 1",
+			"self_target": {
+				"min_scale_at_level_1": 0.5,
+				"max_scale_at_level_1": 2.0,
+				"min_scale_at_level_9": 0.167,
+				"max_scale_at_level_9": 6.0
+			},
+			"object_target": {
+				"min_scale": 0.6,
+				"max_scale": 1.5
+			},
+			"enemy_target": {
+				"min_scale": 0.4,
+				"max_scale": 2.5
+			}
+		},
+		"mechanics": {
+			"persistent": "depends_on_mode",
+			"affects_collision_shape": true,
+			"affects_passage_width": true,
+			"animation_duration_seconds": 0.3
+		},
+		"visual_effects": {
+			"color": "#9C27B0",
+			"pulsing_aura": true,
+			"particle_burst": "scale_change"
+		}
+	},
+	"split_power": {
+		"name": "Split Power",
+		"description": "Affect multiple targets by dividing your level",
+		"unlock_level": 3,
+		"mechanics": {
+			"max_targets_at_level_3": 2,
+			"max_targets_at_level_5": 3,
+			"formula": "level_per_target = player_level / num_targets"
+		}
+	},
+	"multi_target_mastery": {
+		"name": "Multi-Target Mastery",
+		"description": "Affect multiple targets more efficiently",
+		"unlock_level": 5,
+		"mechanics": {
+			"max_targets_at_level_5": 2,
+			"max_targets_at_level_7": 3,
+			"max_targets_at_level_9": 4,
+			"max_targets_at_level_10": 99,
+			"formula": "base_level = player_level - num_targets"
+		}
+	},
+	"combo": {
+		"name": "Combo System",
+		"description": "Chain multiple transformations together",
+		"mechanics": {
+			"combo_2_unlock_level": 4,
+			"combo_3_unlock_level": 7,
+			"combo_4_unlock_level": 8,
+			"max_combo_length": 4,
+			"power_per_ability": "full_level",
+			"execution_order": "sequential"
+		}
+	}
+}

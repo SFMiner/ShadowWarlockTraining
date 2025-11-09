@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm5ug8pfuk23b"]
+
+[ext_resource type="Script" path="res://scripts/player/player_avatar.gd"]
+[ext_resource type="Script" path="res://scripts/enemies/hound.gd"]
+[ext_resource type="Script" path="res://scripts/enemies/mirror_wraith.gd"]
+[ext_resource type="Script" path="res://scripts/enemies/hollow_sentinel.gd"]
+[ext_resource type="Script" path="res://scripts/enemies/architect.gd"]
+[ext_resource type="Script" path="res://scripts/test/turn_system_integration_test.gd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_player"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
+radius = 6.0
+
+[node name="TurnSystemTestLevel" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("res://scenes/player/player_avatar.tscn")]
+position = Vector2(160, 240)
+script = ExtResource("res://scripts/player/player_avatar.gd")
+
+[node name="Hound1" type="CharacterBody2D" parent="."]
+position = Vector2(320, 240)
+script = ExtResource("res://scripts/enemies/hound.gd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hound1"]
+modulate = Color(1, 0.5, 0.5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hound1"]
+shape = SubResource("CircleShape2D_enemy")
+
+[node name="MirrorWraith1" type="CharacterBody2D" parent="."]
+position = Vector2(400, 180)
+script = ExtResource("res://scripts/enemies/mirror_wraith.gd")
+
+[node name="Sprite2D" type="Sprite2D" parent="MirrorWraith1"]
+modulate = Color(0, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MirrorWraith1"]
+shape = SubResource("CircleShape2D_enemy")
+
+[node name="HollowSentinel1" type="CharacterBody2D" parent="."]
+position = Vector2(480, 240)
+script = ExtResource("res://scripts/enemies/hollow_sentinel.gd")
+
+[node name="Sprite2D" type="Sprite2D" parent="HollowSentinel1"]
+modulate = Color(1, 1, 0.5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HollowSentinel1"]
+shape = SubResource("CircleShape2D_enemy")
+
+[node name="Architect1" type="CharacterBody2D" parent="."]
+position = Vector2(400, 300)
+script = ExtResource("res://scripts/enemies/architect.gd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Architect1"]
+modulate = Color(0.5, 0.5, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Architect1"]
+shape = SubResource("CircleShape2D_enemy")
+
+[node name="LevelController" type="Node" parent="."]
+script = ExtResource("res://scripts/test/turn_system_integration_test.gd")
+
+[node name="ExitMarker" type="Marker2D" parent="."]
+position = Vector2(600, 240)

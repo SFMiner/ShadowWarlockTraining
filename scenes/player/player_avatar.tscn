@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://vybkqtn4fh4v"]
+
+[ext_resource type="Script" path="res://scripts/player/player_avatar.gd" id="1_37we1"]
+[ext_resource type="Texture2D" uid="uid://cqarqnhk8lgq8" path="res://assets/sprites/characters/warlock_walk_Sheet.png" id="2_mej13"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37we1"]
+
+[sub_resource type="Animation" id="Animation_bce2e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_mej13"]
+resource_name = "walk"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.79999995, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 3, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5pseq"]
+_data = {
+&"RESET": SubResource("Animation_bce2e"),
+&"walk": SubResource("Animation_mej13")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_37we1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mej13")
+hframes = 5
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_37we1")
+
+[node name="HitDetection" type="Area2D" parent="."]
+
+[node name="HitCollision" type="CollisionShape2D" parent="HitDetection"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5pseq")
+}

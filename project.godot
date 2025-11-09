@@ -11,13 +11,23 @@ config_version=5
 [application]
 
 config/name="Shadow Warlock Training"
-run/main_scene="uid://bqd7i3j7vj3c7"
+run/main_scene="uid://brcg25cck3ljs"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameConstants="*res://scripts/autoload/game_constants.gd"
+GameManager="*res://scripts/autoload/game_manager.gd"
+SaveSystem="*res://scripts/autoload/save_system.gd"
+LevelManager="*res://scripts/autoload/level_manager.gd"
+GridSystem="*res://scripts/systems/grid_system.gd"
+TransformationValidator="*res://scripts/systems/transformation_validator.gd"
+PreviewSystem="*res://scripts/systems/preview_system.gd"
+TurnManager="*res://scripts/systems/turn_manager.gd"
+DifficultySystem="*res://scripts/systems/difficulty_system.gd"
+TelegraphSystem="*res://scripts/systems/telegraph_system.gd"
+CombatResolver="*res://scripts/systems/combat_resolver.gd"
 
 [display]
 
